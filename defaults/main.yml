@@ -8,8 +8,14 @@
 cis_apply_level_1_profile: true    # Whether Level 1 of the benchmark should be applied
 cis_apply_level_2_profile: true    # Whether Level 2 of the benchmark should be applied
 
-cis_level_1_exclusions: ['1.2.3','1.8','3.4.2','3.4.3']         # A list of Level 1 recommendations to exclude (i.e. ['1.1.1.1'])
+#cis_level_1_exclusions: ['1.2.3','1.8','3.4.2','3.4.3']         # A list of Level 1 recommendations to exclude (i.e. ['1.1.1.1'])
 #cis_level_1_exclusions: ['1.2.3','1.8']
+cis_level_1_exclusions:
+  - '1.2.3'
+  - '1.8'
+  - '3.4.2'
+  - '3.4.3'
+
 cis_level_2_exclusions: ['6.1.1']         # A list of Level 2 recommendations to exclude
 
 # Whether to fail when remediation items are found for recommendations which can't be automatically fixed.
@@ -255,7 +261,7 @@ cis_hosts_allow_all_ips:
 cis_firewalld_install: { package: firewalld, state: present, service: firewalld, rstate: started, enabled: true, exception: 123 }
 
 # 4.1
-## Configuration for the auditd.conf 
+## Configuration for the auditd.conf
 # 4.1.1.1
 # Max log file in MB
 cis_max_log_file: 8
@@ -289,7 +295,7 @@ cis_admin_space_left: 50
 cis_disk_full_action: SUSPEND
 cis_disk_error_action: SUSPEND
 cis_use_libwrap: "yes"
-##cis_tcp_listen_port:  
+##cis_tcp_listen_port:
 cis_tcp_listen_queue: 5
 cis_tcp_max_per_addr: 1
 ##cis_tcp_client_ports: 1024-65535
